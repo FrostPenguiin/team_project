@@ -33,3 +33,7 @@ hs_err_pid*
 # Web Project Ignore Folder/File
 **/build/
 **/.settings/
+
+# spring Ignore Folder/File
+.springBeans
+**/target/
