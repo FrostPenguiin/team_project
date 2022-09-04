@@ -1,0 +1,414 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 10px;
+}
+
+ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    border: 1px;
+    border-radius: 4px 4px;
+}
+
+.mvr_wrap {
+    width: 820px;
+    margin: 100px auto;
+}
+
+.mrv_array_wrap{
+  display: inline-block;
+  margin-bottom: 5px;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.many{
+  display: inline-block;
+  margin-left: 5px;
+  color: white;
+  background-color: DodgerBlue;
+  border: 1px;
+  border-radius: 4px 4px;
+  padding: 10px;
+}
+
+.new{
+  margin-left: 5px;
+  color: white;
+  background-color: DodgerBlue;
+  border: 1px;
+  border-radius: 4px 4px;
+  float: left;
+  padding: 10px;
+}
+
+.mvr_list_wrap{
+    width: 810px;
+    margin: 5px auto;
+}
+
+.box4{
+  float: left;
+  width: 395px;
+  height: 200px;
+  border: solid 1px;
+  border-color: silver;
+  border-left-color: white;
+}
+
+.box3{
+  display: inline-block;
+  width: 395px;
+  height: 200px;
+  margin-left: 10px;
+  border: solid 1px;
+  border-color: silver;
+  border-right-color: white;
+}
+
+.box2{
+  float: left;
+  width: 395px;
+  height: 200px;
+  margin-top: 10px;
+  border: solid 1px;
+  border-color: silver;
+  border-left-color: white;
+}
+
+.box1{
+  display: inline-block;
+  width: 395px;
+  height: 200px;
+  margin-left: 10px;
+  margin-top: 10px;
+  border: solid 1px;
+  border-color: silver;
+  border-right-color: white;
+}
+
+.box4 > .member_img {
+        margin-left: 10px;
+        margin-top: 10px;
+        width: 50px;
+        height: 50px;
+        border: 2px solid DodgerBlue;
+        border-radius: 50%;
+        background-image: url("https://pbs.twimg.com/media/E-2LQguUcAA1t5X?format=jpg&name=large");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        float: left;
+}
+
+.box4 > .writer{
+  margin-top: 30px;
+  margin-left: 10px;
+  float: left;
+  font-size: 1.3rem;
+}
+
+.box4 > .option a{
+  margin-top: 30px;
+  margin-right: 10px;
+  float: right;
+  font-size: 20px;
+  color: DodgerBlue;
+}
+
+.box4 > .text{
+  margin-top: 100px;
+  margin-left: 75px;
+}
+
+.box4 > .date{
+  margin-top: 70px;
+  margin-left: 10px;
+  display: inline-block;
+}
+
+.box4 > .count{
+  display: inline-block;
+  margin-left: 30px;
+  font-size: 1.3rem;
+  color: DodgerBlue;
+}
+
+.box3 > .member_img {
+        margin-left: 10px;
+        margin-top: 10px;
+        width: 50px;
+        height: 50px;
+        border: 2px solid DodgerBlue;
+        border-radius: 50%;
+        background-image: url("https://pbs.twimg.com/profile_images/1364511238714056705/cXUWbWGc_400x400.jpg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        float: left;
+}
+
+.box3 > .writer{
+  margin-top: 30px;
+  margin-left: 10px;
+  float: left;
+  font-size: 1.3rem;
+}
+
+.box3 > .option a{
+  margin-top: 30px;
+  margin-right: 10px;
+  float: right;
+  font-size: 20px;
+  color: DodgerBlue;
+}
+
+.box3 > .text{
+  margin-top: 70px;
+  margin-left: 75px;
+}
+
+.box3 > .text{
+  margin-top: 100px;
+  margin-left: 75px;
+}
+
+.box3 > .date{
+  margin-top: 70px;
+  margin-left: 10px;
+  display: inline-block;
+}
+
+.box3 > .count{
+  display: inline-block;
+  margin-left: 30px;
+  font-size: 1.3rem;
+  color: DodgerBlue;
+}
+
+.box2 > .member_img {
+        margin-left: 10px;
+        margin-top: 10px;
+        width: 50px;
+        height: 50px;
+        border: 2px solid DodgerBlue;
+        border-radius: 50%;
+        background-image: url("https://pbs.twimg.com/media/E-2LQ_LVIAsYxa4?format=jpg&name=360x360");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        float: left;
+}
+
+.box2 > .writer{
+  margin-top: 30px;
+  margin-left: 10px;
+  float: left;
+  font-size: 1.3rem;
+}
+
+.box2 > .option a{
+  margin-top: 30px;
+  margin-right: 10px;
+  float: right;
+  font-size: 20px;
+  color: DodgerBlue;
+}
+
+.box2 > .text{
+  margin-top: 100px;
+  margin-left: 75px;
+}
+
+.box2 > .date{
+  margin-top: 70px;
+  margin-left: 10px;
+  display: inline-block;
+}
+
+.box2 > .count{
+  display: inline-block;
+  margin-left: 30px;
+  font-size: 1.3rem;
+  color: DodgerBlue;
+}
+
+.box1 > .member_img {
+        margin-left: 10px;
+        margin-top: 10px;
+        width: 50px;
+        height: 50px;
+        border: 2px solid DodgerBlue;
+        border-radius: 50%;
+        background-image: url("https://file.namu.moe/file/ec8f4efe37a39707777dc6175d3df2076f1522e710cf008aa21cc70f977f4485aa6ad4f106a397bb62830bd63f386e6c");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        float: left;
+}
+
+.box1 > .writer{
+  margin-top: 30px;
+  margin-left: 10px;
+  float: left;
+  font-size: 1.3rem;
+}
+
+.box1 > .option a{
+  margin-top: 30px;
+  margin-right: 10px;
+  float: right;
+  font-size: 20px;
+  color: DodgerBlue;
+}
+
+.box1 > .text{
+  margin-top: 100px;
+  margin-left: 75px;
+}
+
+.box1 > .date{
+  margin-top: 70px;
+  margin-left: 10px;
+  display: inline-block;
+}
+
+.box1 > .count{
+  display: inline-block;
+  margin-left: 30px;
+  font-size: 1.3rem;
+  color: DodgerBlue;
+}
+
+.review_page{
+  margin-top: 15px;
+  font-size: 1.3rem;
+  text-align: center;
+  
+}
+
+.bt_first{
+  margin-top: 20px;
+  margin-left: 5px;
+  color: black;
+  background-color: silver;
+  border: 1px;
+  border-radius: 4px 4px;
+  float: center;
+  padding: 10px;
+}
+
+.bt_prev{
+  margin-top: 20px;
+  margin-left: 5px;
+  color: black;
+  background-color: silver;
+  border: 1px;
+  border-radius: 4px 4px;   
+  float: center;
+  padding: 10px;
+}
+
+.num_on{
+  margin-top: 20px;
+  margin-left: 5px;
+  color: white;
+  background-color: DodgerBlue;
+  border: 1px;
+  border-radius: 4px 4px;   
+  float: center;
+  padding: 10px;
+}
+
+.num{
+  margin-top: 20px;
+  margin-left: 5px;
+  color: black;
+  background-color: silver;
+  border: 1px;
+  border-radius: 4px 4px;   
+  float: center;
+  padding: 10px;
+}
+
+.bt_next{
+  margin-top: 20px;
+  margin-left: 5px;
+  color: black;
+  background-color: silver;
+  border: 1px;
+  border-radius: 4px 4px;
+  float: center;
+  padding: 10px;
+}
+
+.bt_last{
+  margin-top: 20px;
+  margin-left: 5px;
+  color: black;
+  background-color: silver;
+  border: 1px;
+  border-radius: 4px 4px;
+  float: center;
+  padding: 10px;
+}
+
+#myform input[type=radio]{
+    display: none;
+}
+
+#myform label{
+    font-size: 1.3rem;
+    color: transparent;
+    text-shadow: 0 0 0 silver;
+}
+
+#myform label:hover{
+    text-shadow: 0 0 0 DodgerBlue;
+}
+
+#myform label:hover ~ label{
+    text-shadow: 0 0 0 DodgerBlue;
+}
+
+#myform fieldset{
+    display: inline-block;
+    direction: rtl;
+    border: 0;
+}
+
+#myform input[type=radio]:checked ~ label{
+    text-shadow: 0 0 0 DodgerBlue;
+}
+
+.review{
+  resize: none;
+  border-radius: 4px;
+  border-color: silver;
+  margin-left: 5px;
+  padding: 10px;
+}
+
+.star{
+  display: inline-block;
+}
+
+.write{
+  position: absolute;
+
+  color: white;
+  background-color: DodgerBlue;
+  border: 1px;
+  border-radius: 4px 4px;   
+  font-size: 1.3rem;
+  padding: 10px;
+}
