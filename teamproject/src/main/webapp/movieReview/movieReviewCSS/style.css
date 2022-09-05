@@ -38,7 +38,7 @@ a {
   background-color: DodgerBlue;
   border: 1px;
   border-radius: 4px 4px;
-  padding: 10px;
+  padding: 5px;
 }
 
 .new{
@@ -48,7 +48,7 @@ a {
   border: 1px;
   border-radius: 4px 4px;
   float: left;
-  padding: 10px;
+  padding: 5px;
 }
 
 .mvr_list_wrap{
@@ -96,6 +96,16 @@ a {
   border-right-color: white;
 }
 
+.box0{
+  display: inline-block;
+  width: 395px;
+  height: 200px;
+  margin-top: 10px;
+  border: solid 1px;
+  border-color: silver;
+  border-left-color: white;
+}
+
 .box4 > .member_img {
         margin-left: 10px;
         margin-top: 10px;
@@ -108,39 +118,6 @@ a {
         background-repeat: no-repeat;
         background-position: center center;
         float: left;
-}
-
-.box4 > .writer{
-  margin-top: 30px;
-  margin-left: 10px;
-  float: left;
-  font-size: 1.3rem;
-}
-
-.box4 > .option a{
-  margin-top: 30px;
-  margin-right: 10px;
-  float: right;
-  font-size: 20px;
-  color: DodgerBlue;
-}
-
-.box4 > .text{
-  margin-top: 100px;
-  margin-left: 75px;
-}
-
-.box4 > .date{
-  margin-top: 70px;
-  margin-left: 10px;
-  display: inline-block;
-}
-
-.box4 > .count{
-  display: inline-block;
-  margin-left: 30px;
-  font-size: 1.3rem;
-  color: DodgerBlue;
 }
 
 .box3 > .member_img {
@@ -157,44 +134,6 @@ a {
         float: left;
 }
 
-.box3 > .writer{
-  margin-top: 30px;
-  margin-left: 10px;
-  float: left;
-  font-size: 1.3rem;
-}
-
-.box3 > .option a{
-  margin-top: 30px;
-  margin-right: 10px;
-  float: right;
-  font-size: 20px;
-  color: DodgerBlue;
-}
-
-.box3 > .text{
-  margin-top: 70px;
-  margin-left: 75px;
-}
-
-.box3 > .text{
-  margin-top: 100px;
-  margin-left: 75px;
-}
-
-.box3 > .date{
-  margin-top: 70px;
-  margin-left: 10px;
-  display: inline-block;
-}
-
-.box3 > .count{
-  display: inline-block;
-  margin-left: 30px;
-  font-size: 1.3rem;
-  color: DodgerBlue;
-}
-
 .box2 > .member_img {
         margin-left: 10px;
         margin-top: 10px;
@@ -207,39 +146,6 @@ a {
         background-repeat: no-repeat;
         background-position: center center;
         float: left;
-}
-
-.box2 > .writer{
-  margin-top: 30px;
-  margin-left: 10px;
-  float: left;
-  font-size: 1.3rem;
-}
-
-.box2 > .option a{
-  margin-top: 30px;
-  margin-right: 10px;
-  float: right;
-  font-size: 20px;
-  color: DodgerBlue;
-}
-
-.box2 > .text{
-  margin-top: 100px;
-  margin-left: 75px;
-}
-
-.box2 > .date{
-  margin-top: 70px;
-  margin-left: 10px;
-  display: inline-block;
-}
-
-.box2 > .count{
-  display: inline-block;
-  margin-left: 30px;
-  font-size: 1.3rem;
-  color: DodgerBlue;
 }
 
 .box1 > .member_img {
@@ -256,14 +162,28 @@ a {
         float: left;
 }
 
-.box1 > .writer{
+.box0 > .member_img {
+        margin-left: 10px;
+        margin-top: 10px;
+        width: 50px;
+        height: 50px;
+        border: 2px solid DodgerBlue;
+        border-radius: 50%;
+        background-image: url("");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        float: left;
+}
+
+.writer{
   margin-top: 30px;
   margin-left: 10px;
   float: left;
   font-size: 1.3rem;
 }
 
-.box1 > .option a{
+.option a{
   margin-top: 30px;
   margin-right: 10px;
   float: right;
@@ -271,95 +191,57 @@ a {
   color: DodgerBlue;
 }
 
-.box1 > .text{
+.text{
   margin-top: 100px;
-  margin-left: 75px;
+  margin-left: 80px;
+  font-size: 1.3rem;
 }
 
-.box1 > .date{
-  margin-top: 70px;
+.date{
+  margin-top: 60px;
   margin-left: 10px;
   display: inline-block;
 }
 
-.box1 > .count{
+.staring{
   display: inline-block;
-  margin-left: 30px;
+  margin-left: 20px;
   font-size: 1.3rem;
   color: DodgerBlue;
 }
 
-.review_page{
-  margin-top: 15px;
+.box0 > .writer{
+  margin-top: 30px;
+  margin-left: 10px;
+  float: left;
   font-size: 1.3rem;
-  text-align: center;
-  
 }
 
-.bt_first{
-  margin-top: 20px;
-  margin-left: 5px;
-  color: black;
-  background-color: silver;
-  border: 1px;
-  border-radius: 4px 4px;
-  float: center;
-  padding: 10px;
+.box0 > .option a{
+  margin-top: 30px;
+  margin-right: 10px;
+  float: right;
+  font-size: 20px;
+  color: DodgerBlue;
 }
 
-.bt_prev{
-  margin-top: 20px;
-  margin-left: 5px;
-  color: black;
-  background-color: silver;
-  border: 1px;
-  border-radius: 4px 4px;   
-  float: center;
-  padding: 10px;
+.box0 > .text{
+  margin-top: 100px;
+  margin-left: 75px;
 }
 
-.num_on{
-  margin-top: 20px;
-  margin-left: 5px;
-  color: white;
-  background-color: DodgerBlue;
-  border: 1px;
-  border-radius: 4px 4px;   
-  float: center;
-  padding: 10px;
+.box0 > .date{
+  float: left;
+  margin-top: 15px;
+  margin-left: 10px;
 }
 
-.num{
-  margin-top: 20px;
-  margin-left: 5px;
-  color: black;
-  background-color: silver;
-  border: 1px;
-  border-radius: 4px 4px;   
-  float: center;
-  padding: 10px;
-}
-
-.bt_next{
-  margin-top: 20px;
-  margin-left: 5px;
-  color: black;
-  background-color: silver;
-  border: 1px;
-  border-radius: 4px 4px;
-  float: center;
-  padding: 10px;
-}
-
-.bt_last{
-  margin-top: 20px;
-  margin-left: 5px;
-  color: black;
-  background-color: silver;
-  border: 1px;
-  border-radius: 4px 4px;
-  float: center;
-  padding: 10px;
+.box0 > .staring{
+  float: left;
+  margin-top: 10px;
+  margin-left: 35px;
+  font-size: 1.3rem;
+  color: DodgerBlue;
 }
 
 #myform input[type=radio]{
@@ -367,7 +249,7 @@ a {
 }
 
 #myform label{
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     color: transparent;
     text-shadow: 0 0 0 silver;
 }
@@ -390,7 +272,7 @@ a {
     text-shadow: 0 0 0 DodgerBlue;
 }
 
-.review{
+.mvr_textarea{
   resize: none;
   border-radius: 4px;
   border-color: silver;
@@ -398,17 +280,95 @@ a {
   padding: 10px;
 }
 
-.star{
-  display: inline-block;
-}
-
-.write{
-  position: absolute;
-
+.mvr_write{
+  margin-top: 10px;
+  margin-right: 30px; 
+  float: right;
   color: white;
   background-color: DodgerBlue;
   border: 1px;
   border-radius: 4px 4px;   
+  size: 1rem;
+  padding: 5px;
+}
+
+.mvr_page{
+  margin-top: 15px;
   font-size: 1.3rem;
-  padding: 10px;
+  text-align: center;
+  
+}
+
+.bt_first{
+  margin-top: 20px;
+  margin-left: 5px;
+  color: black;
+  background-color: silver;
+  border: 1px;
+  border-radius: 4px 4px;
+  float: center;
+  padding: 5px;
+}
+
+.bt_prev{
+  margin-top: 20px;
+  margin-left: 5px;
+  color: black;
+  background-color: silver;
+  border: 1px;
+  border-radius: 4px 4px;   
+  float: center;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;;
+}
+
+.num_on{
+  margin-top: 20px;
+  margin-left: 5px;
+  color: white;
+  background-color: DodgerBlue;
+  border: 1px;
+  border-radius: 4px 4px;   
+  float: center;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.num{
+  margin-top: 20px;
+  margin-left: 5px;
+  color: black;
+  background-color: silver;
+  border: 1px;
+  border-radius: 4px 4px;   
+  float: center;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.bt_next{
+  margin-top: 20px;
+  margin-left: 5px;
+  color: black;
+  background-color: silver;
+  border: 1px;
+  border-radius: 4px 4px;
+  float: center;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.bt_last{
+  margin-top: 20px;
+  margin-left: 5px;
+  color: black;
+  background-color: silver;
+  border: 1px;
+  border-radius: 4px 4px;
+  float: center;
+  padding: 5px;
 }
