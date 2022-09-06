@@ -3,9 +3,13 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx https://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
 
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 	
@@ -21,8 +25,32 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="mytld.mycompany.myapp" />
+	<context:component-scan base-package="com.myhome.web" />
 	
-	
+	<!-- 데이터베이스 설정 -->
+	<!--  
+	<beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<beans:property name="driverClassName" value="oracle.jdbc.OracleDriver"></beans:property>
+		<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521/XEPDB1"></beans:property>
+		<beans:property name="username" value="puser1"></beans:property>
+		<beans:property name="password" value="Database1234"></beans:property>
+	</beans:bean>
+	<beans:bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<beans:property name="dataSource" ref="dataSource"></beans:property>
+	</beans:bean>
+	<beans:bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<beans:property name="dataSource" ref="dataSource"></beans:property>
+	</beans:bean>
+	<beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<beans:property name="dataSource" ref="dataSource"></beans:property>
+		<beans:property name="configLocation" value="classpath:/mybatis/mybatis-config.xml"></beans:property>
+		<beans:property name="mapperLocations" value="classpath:/mybatis/mapper/*.xml"></beans:property>
+	</beans:bean>
+	<beans:bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<beans:constructor-arg index="0" ref="sqlSessionFactory"></beans:constructor-arg>	
+	</beans:bean>
+	-->
+
+	<tx:annotation-driven transaction-manager="transactionManager" />
 	
 </beans:beans>
