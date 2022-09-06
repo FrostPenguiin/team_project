@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="deptMapper">
+	<resultMap type="deptDto" id="deptDtoMap">
+		<result property="deptId" column="DEPARTMENT_ID" />
+		<result property="deptName" column="DEPARTMENT_NAME" />
+		<result property="mngId" column="MANAGER_ID" />
+		<result property="locId" column="LOCATION_ID" />
+	</resultMap>
+	<select id="deptSelectAll" resultMap="deptDtoMap">
+		SELECT * FROM DEPARTMENTS
+	</select>
+	<select id="deptSelectId" resultMap="deptDtoMap">
+		SELECT * FROM DEPARTMENTS
+		 WHERE DEPARTMENT_ID = #{id}
+	</select>
+	<select id="deptSelectPage" resultMap="deptDtoMap">
+		SELECT *
+		  FROM (SELECT ROWNUM AS NUM
+		             , DEPARTMENT_ID
+		             , DEPARTMENT_NAME
+		             , MANAGER_ID
+		             , LOCATION_ID
+		          FROM DEPARTMENTS)
+		 WHERE NUM BETWEEN #{start} AND #{end}
+	</select>
+	<select id="deptTotalRow" resultType="_int">
+		SELECT COUNT(*) FROM DEPARTMENTS
+	</select>
+	<select id="existManager" resultType="_int">
+		SELECT COUNT(*) FROM EMPLOYEES WHERE EMPLOYEE_ID = #{id}
+	</select>
+	<select id="existLocation" resultType="_int">
+		SELECT COUNT(*) FROM LOCATIONS WHERE LOCATION_ID = #{id}
+	</select>
+	<insert id="deptInsert" parameterType="deptDto">
+		INSERT INTO DEPARTMENTS VALUES (#{deptId}, #{deptName}, #{mngId}, #{locId})
+	</insert>
+	<update id="deptUpdate" parameterType="deptDto">
+		UPDATE DEPARTMENTS
+		   SET DEPARTMENT_NAME = #{deptName}
+		     , MANAGER_ID = #{mngId}
+		     , LOCATION_ID = #{locId}
+		 WHERE DEPARTMENT_ID = #{deptId}
+	</update>
+	<delete id="deptDelete" parameterType="_int">
+		DELETE FROM DEPARTMENTS
+		 WHERE DEPARTMENT_ID = #{id}
+	</delete>
+	<select id="existsManager" resultType="_int">
+		SELECT COUNT(*) FROM EMPLOYEES
+		  WHERE EMPLOYEE_ID = #{id}
+	</select>
+	<select id="existsLocation" resultType="_int">
+		SELECT COUNT(*) FROM LOCATIONS
+		  WHERE LOCATION_ID = #{id}
+	</select>
+</mapper>

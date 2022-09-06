@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="empMapper">
+	<resultMap type="empDto" id="empDtoMap">
+		<result property="empId" column="EMPLOYEE_ID" />
+		<result property="empName" column="EMPLOYEE_NAME" />
+		<result property="email" column="EMAIL" />
+		<result property="jobName" column="JOB_TITLE" />
+		<result property="jobId" column="JOB_ID" />
+		<result property="deptName" column="DEPARTMENT_NAME" />
+		<result property="deptId" column="DEPARTMENT_ID" />
+	</resultMap>
+	<delete id="deleteId">
+		DELETE FROM EMPLOYEES
+		 WHERE EMPLOYEE_ID = #{id}
+	</delete>
+	<insert id="insertEmployee" parameterType="empDto">
+		INSERT INTO
+		  EMPLOYEES(EMPLOYEE_ID
+		          , FIRST_NAME
+		          , LAST_NAME
+		          , EMAIL
+		          , JOB_ID
+		          , DEPARTMENT_ID
+		          , HIRE_DATE)
+		     VALUES(#{empId}
+		          , SUBSTR(#{empName}, 1, INSTR(#{empName}, ' ') - 1)
+		          , SUBSTR(#{empName}, INSTR(#{empName}, ' ') + 1, LENGTH(#{empName}))
+		          , SUBSTR(#{email}, 1, INSTR(#{email}, '@') - 1)
+		          , #{jobId}
+		          , #{deptId}
+		          , SYSDATE)
+	</insert>
+	<select id="selectId" resultMap="empDtoMap">
+		SELECT E.EMPLOYEE_ID
+		     , CONCAT(E.FIRST_NAME, ' ' || E.LAST_NAME) AS EMPLOYEE_NAME
+		     , CONCAT(E.EMAIL, '@emp.com') AS EMAIL
+		     , J.JOB_TITLE
+		     , E.JOB_ID
+		     , D.DEPARTMENT_NAME
+		     , E.DEPARTMENT_ID
+		  FROM EMPLOYEES E
+		  JOIN JOBS J
+		    ON E.JOB_ID = J.JOB_ID
+		  JOIN DEPARTMENTS D
+		    ON E.DEPARTMENT_ID = D.DEPARTMENT_ID
+		 WHERE E.EMPLOYEE_ID = #{id}
+	</select>
+	<update id="updateEmployee" parameterType="empDto">
+		UPDATE EMPLOYEES
+		   SET EMAIL = #{email}
+		     , JOB_ID = #{jobId}
+		     , DEPARTMENT_ID = #{deptId}
+		     , FIRST_NAME = SUBSTR(#{empName}, 1, INSTR(#{empName}, ' ') - 1)
+		     , LAST_NAME = SUBSTR(#{empName}, INSTR(#{empName}, ' ') + 1, LENGTH(#{empName}))
+		 WHERE EMPLOYEE_ID = #{empId}
+	</update>
+	<update id="updateEmployeeDetail" parameterType="empDetailDto">
+		UPDATE EMPLOYEES
+		   SET PHONE_NUMBER = #{phone}
+		     , HIRE_DATE = #{hireDate}
+		     , SALARY = #{salary}
+		     , COMMISSION_PCT = #{commission}
+		 WHERE EMPLOYEE_ID = #{empId}
+	</update>
+	<select id="selectDetail" parameterType="_int" resultType="empDetailDto">
+		SELECT EMPLOYEE_ID AS empId
+		     , PHONE_NUMBER AS phone
+		     , HIRE_DATE AS hireDate
+		     , SALARY AS salary
+		     , COMMISSION_PCT AS commission
+		     , MANAGER_ID AS mngId
+		  FROM EMPLOYEES
+		 WHERE EMPLOYEE_ID = #{id}
+	</select>
+	<select id="selectAll" parameterType="empDto" resultMap="empDtoMap">
+		SELECT E.EMPLOYEE_ID
+		     , CONCAT(E.FIRST_NAME, ' ' || E.LAST_NAME) AS EMPLOYEE_NAME
+		     , CONCAT(E.EMAIL, '@emp.com') AS EMAIL
+		     , J.JOB_TITLE
+		     , E.JOB_ID
+		     , D.DEPARTMENT_NAME
+		     , E.DEPARTMENT_ID
+		  FROM EMPLOYEES E
+		  JOIN JOBS J
+		    ON E.JOB_ID = J.JOB_ID
+		  JOIN DEPARTMENTS D
+		    ON E.DEPARTMENT_ID = D.DEPARTMENT_ID
+		<if test="deptId != 10">
+		 WHERE E.DEPARTMENT_ID = #{deptId}
+		</if>
+		 ORDER BY E.EMPLOYEE_ID
+	</select>
+	<select id="totalRow" parameterType="empDto" resultType="_int">
+		SELECT COUNT(*)
+		  FROM EMPLOYEES E
+		  JOIN JOBS J
+		    ON E.JOB_ID = J.JOB_ID
+		  JOIN DEPARTMENTS D
+		    ON E.DEPARTMENT_ID = D.DEPARTMENT_ID
+		<if test="deptId != 10">
+		 WHERE E.DEPARTMENT_ID = #{deptId}
+		</if>
+	</select>
+</mapper>

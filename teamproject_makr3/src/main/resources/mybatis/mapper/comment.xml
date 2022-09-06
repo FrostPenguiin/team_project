@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="commentMapper">
+	<insert id="insertData" parameterType="commentDto">
+		INSERT INTO COMMENTS(ID, BID, CONTENT, EMPID, DELETED)
+			 VALUES(COMMENTS_SEQ.NEXTVAL, #{bId}
+			      , #{content}, #{empId}, 'N')
+	</insert>
+	<select id="selectDatas" resultType="commentDto">
+		SELECT C.ID
+		     , C.BID
+		     , C.EMPID
+		     , E.FIRST_NAME || ' ' || E.LAST_NAME AS empName
+		     , C.CONTENT
+		     , C.CREATEDATE
+		     , C.DELETED
+		  FROM COMMENTS C
+		  JOIN EMPLOYEES E
+		    ON C.EMPID = E.EMPLOYEE_ID
+		 WHERE C.BID = #{bId}
+		   AND C.DELETED = 'N'
+		 ORDER BY C.ID
+	</select>
+	<select id="selectData" resultType="commentDto">
+		SELECT C.ID
+		     , C.BID
+		     , C.EMPID
+		     , E.FIRST_NAME || ' ' || E.LAST_NAME AS empName
+		     , C.CONTENT
+		     , C.CREATEDATE
+		     , C.DELETED
+		  FROM COMMENTS C
+		  JOIN EMPLOYEES E
+		    ON C.EMPID = E.EMPLOYEE_ID
+		 WHERE C.ID = #{id}
+	</select>
+	<update id="deleteData" parameterType="commentDto">
+		UPDATE COMMENTS
+		   SET DELETED = 'Y'
+		 WHERE ID = #{id}
+	</update>
+	<update id="updateData" parameterType="commentDto">
+		UPDATE COMMENTS
+		   SET CONTENT = #{content}
+		 WHERE ID = #{id}
+	</update>
+	<select id="getTotalRows" resultType="_int">
+		SELECT COUNT(*)
+		  FROM COMMENTS C
+		 WHERE C.BID = #{bId}
+		   AND C.DELETED = 'N'
+	</select>
+</mapper>

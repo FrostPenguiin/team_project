@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="locsMapper">
+	<resultMap type="locsDto" id="locsDtoMap">
+		<result property="locId" column="LOCATION_ID" />
+		<result property="stAddr" column="STREET_ADDRESS" />
+		<result property="postal" column="POSTAL_CODE" />
+		<result property="city" column="CITY" />
+		<result property="state" column="STATE_PROVINCE" />
+		<result property="ctyId" column="COUNTRY_ID" />
+	</resultMap>
+	<select id="locsSelectAll" resultMap="locsDtoMap">
+		SELECT * FROM LOCATIONS
+	</select>
+	<select id="locsSelectId" resultMap="locsDtoMap">
+		SELECT * FROM LOCATIONS
+		 WHERE LOCATION_ID = #{id}
+	</select>
+</mapper>

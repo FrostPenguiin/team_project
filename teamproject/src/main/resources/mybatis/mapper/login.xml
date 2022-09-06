@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="loginMapper">
+	<resultMap type="empDto" id="empDtoMap">
+		<result property="empId" column="EMPLOYEE_ID" />
+		<result property="empName" column="EMPLOYEE_NAME" />
+		<result property="email" column="EMAIL" />
+		<result property="jobName" column="JOB_TITLE" />
+		<result property="jobId" column="JOB_ID" />
+		<result property="deptName" column="DEPARTMENT_NAME" />
+		<result property="deptId" column="DEPARTMENT_ID" />
+	</resultMap>
+	<select id="selectEmployee" parameterType="map" resultMap="empDtoMap">
+		SELECT E.EMPLOYEE_ID
+		     , CONCAT(E.FIRST_NAME, ' ' || E.LAST_NAME) AS EMPLOYEE_NAME
+		     , CONCAT(E.EMAIL, '@emp.com') AS EMAIL
+		     , J.JOB_TITLE
+		     , E.JOB_ID
+		     , D.DEPARTMENT_NAME
+		     , E.DEPARTMENT_ID
+		  FROM EMPLOYEES E
+		  JOIN JOBS J
+		    ON E.JOB_ID = J.JOB_ID
+		  JOIN DEPARTMENTS D
+		    ON E.DEPARTMENT_ID = D.DEPARTMENT_ID
+		 WHERE E.EMPLOYEE_ID = #{empId}
+		   AND E.DEPARTMENT_ID = #{deptId}
+		   AND E.FIRST_NAME = #{empFirstName}
+		   AND E.LAST_NAME = #{empLastName}
+	</select>
+</mapper>

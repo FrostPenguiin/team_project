@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL"/>
+	</settings>
+	<typeAliases>
+		<typeAlias type="com.myhome.web.dept.model.DeptDTO" alias="deptDto"/>
+		<typeAlias type="com.myhome.web.emp.model.EmpDTO" alias="empDto"/>
+		<typeAlias type="com.myhome.web.login.model.PermDTO" alias="permDto"/>
+		<typeAlias type="com.myhome.web.board.model.BoardDTO" alias="boardDto"/>
+		<typeAlias type="com.myhome.web.board.model.BoardStatisDTO" alias="boardStatisDto"/>
+		<typeAlias type="com.myhome.web.comment.model.CommentDTO" alias="commentDto"/>
+		<typeAlias type="com.myhome.web.upload.model.FileUploadDTO" alias="fileUploadDto"/>
+		<!-- 
+		<typeAlias type="locs.model.LocsDTO" alias="locsDto"/>
+		<typeAlias type="emps.model.EmpDetailDTO" alias="empDetailDto"/>
+		<typeAlias type="job.model.JobDTO" alias="jobDto"/>
+		 -->
+	</typeAliases>
+</configuration>
