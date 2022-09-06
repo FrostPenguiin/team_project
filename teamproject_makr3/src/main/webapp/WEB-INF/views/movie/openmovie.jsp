@@ -32,7 +32,7 @@
    
    
    <!-- CSS파일 -->
-   <link rel="stylesheet" href="${path }/resources/CSS/main/openMovie.css">
+   <link rel="stylesheet" href="${path }/resources/CSS/movie/openMovie.css">
    
    <!-- 파비콘 설정-->
    <link rel="shortcut icon" href="${path}/resources/img/movie_favicon.ico" type="image/x-icon">
@@ -48,8 +48,8 @@
 	        <section class="index-left">
 				<ul class="index">
 					<li><h2>영화 목록</h2></li>
-					<li class="indexmenu"><a href="./index">▶현재 상영 영화</a></li>
-					<li class="indexmenu"><a href="./index2">상영 예정 영화</a></li>
+					<li class="indexmenu"><a href="./openmovie">▶현재 상영 영화</a></li>
+					<li class="indexmenu"><a href="./intendedMovie">상영 예정 영화</a></li>
 				</ul>
 			</section>
 			<section class="list-center">
@@ -63,11 +63,11 @@
 								<td>
 									<div class="content">
 										<span class="moviesrc">
-											<a class="movieinfo" href="./index3">
+											<a class="movieinfo" href="./movieinfo">
 												<img class="moviesrc" src="${path }/resources/img/run.jpg">
 											</a>
 										</span>
-										<span class="name info"><a class="movieinfo" href="./index3">영화</a></span>
+										<span class="name info"><a class="movieinfo" href="./movieinfo">영화</a></span>
 										<span class="point info">5.0</span>
 										<span class="palytime info">132분</span>
 										<span><a class="reservation" href="./home.jsp">예매</a></span> 
@@ -78,11 +78,11 @@
 								<td>
 									<div class="content">
 										<span class="moviesrc">
-											<a class="movieinfo" href="./index3">
+											<a class="movieinfo" href="./movieinfo">
 												<img class="moviesrc" src="${path }/resources/img/run.jpg">
 											</a>
 										</span>
-										<span class="name info"><a class="movieinfo" href="./index3">영화</a></span>
+										<span class="name info"><a class="movieinfo" href="./movieinfo">영화</a></span>
 										<span class="point info">5.0</span>
 										<span class="palytime info">132분</span>
 										<span><a class="reservation" href="./home.jsp">예매</a></span> 
@@ -93,11 +93,11 @@
 								<td>
 									<div class="content">
 										<span class="moviesrc">
-											<a class="movieinfo" href="./index3">
+											<a class="movieinfo" href="./movieinfo">
 												<img class="moviesrc" src="${path }/resources/img/run.jpg">
 											</a>
 										</span>
-										<span class="name info"><a class="movieinfo" href="./index3">영화</a></span>
+										<span class="name info"><a class="movieinfo" href="./movieinfo">영화</a></span>
 										<span class="point info">5.0</span>
 										<span class="palytime info">132분</span>
 										<span><a class="reservation" href="./home.jsp">예매</a></span> 
@@ -108,11 +108,11 @@
 								<td>
 									<div class="content">
 										<span class="moviesrc">
-											<a class="movieinfo" href="./index3">
+											<a class="movieinfo" href="./movieinfo">
 												<img class="moviesrc" src="${path }/resources/img/run.jpg">
 											</a>
 										</span>
-										<span class="name info"><a class="movieinfo" href="./index3">영화</a></span>
+										<span class="name info"><a class="movieinfo" href="./movieinfo">영화</a></span>
 										<span class="point info">5.0</span>
 										<span class="palytime info">132분</span>
 										<span><a class="reservation" href="./home.jsp">예매</a></span> 
@@ -123,11 +123,11 @@
 								<td>
 									<div class="content">
 										<span class="moviesrc">
-											<a class="movieinfo" href="./index3">
+											<a class="movieinfo" href="./movieinfo">
 												<img class="moviesrc" src="${path }/resources/img/run.jpg">
 											</a>
 										</span>
-										<span class="name info"><a class="movieinfo" href="./index3">영화</a></span>
+										<span class="name info"><a class="movieinfo" href="./movieinfo">영화</a></span>
 										<span class="point info">5.0</span>
 										<span class="palytime info">132분</span>
 										<span><a class="reservation" href="./home.jsp">예매</a></span> 
@@ -138,11 +138,11 @@
 								<td>
 									<div class="content">
 										<span class="moviesrc">
-											<a class="movieinfo" href="./index3">
+											<a class="movieinfo" href="./movieinfo">
 												<img class="moviesrc" src="${path }/resources/img/run.jpg">
 											</a>
 										</span>
-										<span class="name info"><a class="movieinfo" href="./index3">영화</a></span>
+										<span class="name info"><a class="movieinfo" href="./movieinfo">영화</a></span>
 										<span class="point info">5.0</span>
 										<span class="palytime info">132분</span>
 										<span><a class="reservation" href="./home.jsp">예매</a></span> 

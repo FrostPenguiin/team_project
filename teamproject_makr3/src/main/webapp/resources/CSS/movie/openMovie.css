@@ -35,7 +35,7 @@ a:active {
 }
 
 .index-left{
-	width: 200px;
+	width: 340px;
     background-color: white;
     border: solid;
     line-height: 1;
@@ -51,7 +51,7 @@ a:active {
 }
 
 .list{
-	height:100%
+	text-align: center;
 }
 
 .list-center{
@@ -64,25 +64,10 @@ a:active {
 }
 
 .content{
-	list-style:none;
 	padding : 20px 300px 20px 0px;
 	margin : 0;
-	font-size: 100%;
-	display: block;
-}
-
-
-
-.movielist{
-	overflow: hidden;
-    position: relative;
-    float: left;
-    width: 230px;
-    height: 420px;
-    margin: 20px 0 50px 40px;
-    padding: 0;
-    background-color: #fff;
-    border-bottom : solid 2px lightblue;
+	border-bottom : solid 2px lightblue;
+    font-size: 100%;
 }
 
 .movieinfo a{
@@ -90,25 +75,22 @@ a:active {
 }
 
 .moviesrc{
-	overflow: hidden;
-    display: block;
-    position: relative;
-    height: 331px;
-    text-decoration: none;
-    background-color: #f5f5f5;
+	height:150px;
+	width:100px;
+	float: left;
 }
 
 .name {
-    position: relative;
-    width: 100%;
-    margin: 15px 0 0 0;
-    line-height: 25px;
+    font-size: 15px;
+    font-weight: bold;
     
 }
 
-.opendate{
-	overflow: hidden;
-    padding: 10px 0 0 0;
+.info{
+	display : block;
+	padding: 5px;
+	float: left;
+	width: calc(100% - 100px);
 }
 
 .ticket{
@@ -130,5 +112,5 @@ a.reservation:hover {
 }
 
 .paginate{
-	margin: 0 0 0 200px;
+	margin: 10px 70px;
 }

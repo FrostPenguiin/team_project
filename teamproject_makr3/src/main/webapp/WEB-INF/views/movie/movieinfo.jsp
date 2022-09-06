@@ -32,7 +32,7 @@
    
    
    <!-- CSS파일 -->
-   <link rel="stylesheet" href="${path }/resources/CSS/main/movieinfo.css">
+   <link rel="stylesheet" href="${path }/resources/CSS/movie/movieinfo.css">
    
    <!-- 파비콘 설정-->
    <link rel="shortcut icon" href="${path}/resources/img/movie_favicon.ico" type="image/x-icon">
@@ -47,8 +47,8 @@
 	        <section class="index-left">
 				<ul class="index">
 					<li><h2>영화 목록</h2></li>
-					<li class="indexmenu"><a href="./index">현재 상영 영화</a></li>
-					<li class="indexmenu"><a href="./index2">상영 예정 영화</a></li>
+					<li class="indexmenu"><a href="./openmovie">현재 상영 영화</a></li>
+					<li class="indexmenu"><a href="./intendedMovie">상영 예정 영화</a></li>
 				</ul>
 			</section>
 			<section>
@@ -68,7 +68,7 @@
 						<img img class="moviesrc" src="${path }/resources/img/run.jpg">
 					</div>
 					<div class="story">
-						영화 줄거리를 소개하며 작성하는 곳으로섬니어어어어어어어어어어어어어어어어어어어어엉sdfsdfsdfsdfsdfsdf
+						영화 줄거리를 소개하며 작성하는 곳으로섬니어어어어어어어어어어어어어adadadad어어어어어어어엉sdfsdfsdfsdfsdfsdf
 					</div>
 				</div>
 			</section>

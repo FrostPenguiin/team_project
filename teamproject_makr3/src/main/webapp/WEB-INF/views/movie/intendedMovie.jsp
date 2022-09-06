@@ -32,7 +32,7 @@
    
    
    <!-- CSS파일 -->
-   <link rel="stylesheet" href="${path }/resources/CSS/main/intendedMovie.css">
+   <link rel="stylesheet" href="${path }/resources/CSS/movie/intendedMovie.css">
    
    <!-- 파비콘 설정-->
    <link rel="shortcut icon" href="${path}/resources/img/movie_favicon.ico" type="image/x-icon">
@@ -48,8 +48,8 @@
 	        <section class="index-left">
 				<ul class="index">
 					<li><h2>영화 목록</h2></li>
-					<li class="indexmenu"><a href="./index">현재 상영 영화</a></li>
-					<li class="indexmenu"><a href="./index2">▶상영 예정 영화</a></li>
+					<li class="indexmenu"><a href="./openmovie">현재 상영 영화</a></li>
+					<li class="indexmenu"><a href="./intendedMoviee">▶상영 예정 영화</a></li>
 				</ul>
 			</section>
 			<section class="list-center">
@@ -61,56 +61,56 @@
 						<ul class="content">
 							<li class="movielist">
 								<div class="moviesrc">
-									<a class="movieinfo" href="./index3">
+									<a class="movieinfo" href="./movieinfo">
 								<img class="moviesrc" src="${path }/resources/img/run.jpg">
 									</a>
 								</div>
-								<div class="name"><a class="movieinfo" href="./index3">영화</a></div>
+								<div class="name"><a class="movieinfo" href="./movieinfo">영화</a></div>
 								<div class="opendate">예정일</div>
 							</li>
 							<li class="movielist">
 								<div class="moviesrc">
-									<a class="movieinfo" href="./index3">
+									<a class="movieinfo" href="./movieinfo">
 								<img class="moviesrc" src="${path }/resources/img/run.jpg">
 									</a>
 								</div>
-								<div class="name"><a class="movieinfo" href="./index3">영화</a></div>
+								<div class="name"><a class="movieinfo" href="./movieinfo">영화</a></div>
 								<div class="opendate">예정일</div>
 							</li>
 							<li class="movielist">
 								<div class="moviesrc">
-									<a class="movieinfo" href="./index3">
+									<a class="movieinfo" href="./movieinfo">
 								<img class="moviesrc" src="${path }/resources/img/run.jpg">
 									</a>
 								</div>
-								<div class="name"><a class="movieinfo" href="./index3">영화</a></div>
+								<div class="name"><a class="movieinfo" href="./movieinfo">영화</a></div>
 								<div class="opendate">예정일</div>
 							</li>
 							<li class="movielist">
 								<div class="moviesrc">
-									<a class="movieinfo" href="./index3">
+									<a class="movieinfo" href="./movieinfo">
 								<img class="moviesrc" src="${path }/resources/img/run.jpg">
 									</a>
 								</div>
-								<div class="name"><a class="movieinfo" href="./index3">영화</a></div>
+								<div class="name"><a class="movieinfo" href="./movieinfo">영화</a></div>
 								<div class="opendate">예정일</div>
 							</li>
 							<li class="movielist">
 								<div class="moviesrc">
-									<a class="movieinfo" href="./index3">
+									<a class="movieinfo" href="./movieinfo">
 								<img class="moviesrc" src="${path }/resources/img/run.jpg">
 									</a>
 								</div>
-								<div class="name"><a class="movieinfo" href="./index3">영화</a></div>
+								<div class="name"><a class="movieinfo" href="./movieinfo">영화</a></div>
 								<div class="opendate">예정일</div>
 							</li>
 							<li class="movielist">
 								<div class="moviesrc">
-									<a class="movieinfo" href="./index3">
+									<a class="movieinfo" href="./movieinfo">
 								<img class="moviesrc" src="${path }/resources/img/run.jpg">
 									</a>
 								</div>
-								<div class="name"><a class="movieinfo" href="./index3">영화</a></div>
+								<div class="name"><a class="movieinfo" href="./movieinfo">영화</a></div>
 								<div class="opendate">예정일</div>
 							</li>
 						</ul>
