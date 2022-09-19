@@ -28,7 +28,6 @@
 	<context:component-scan base-package="com.myhome.web" />
 	
 	<!-- 데이터베이스 설정 -->
-	<!--  
 	<beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<beans:property name="driverClassName" value="oracle.jdbc.OracleDriver"></beans:property>
 		<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521/XEPDB1"></beans:property>
@@ -49,7 +48,6 @@
 	<beans:bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 		<beans:constructor-arg index="0" ref="sqlSessionFactory"></beans:constructor-arg>	
 	</beans:bean>
-	-->
 
 	<tx:annotation-driven transaction-manager="transactionManager" />
 	

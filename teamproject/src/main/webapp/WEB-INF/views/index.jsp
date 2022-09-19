@@ -39,35 +39,9 @@
 	<title>KH CINEMA</title>
 </head>
 <body>
-    
     <header id="header">
-        <div class="container">
-            <div class="row">
-                <div class="header clearfix">
-                    <h1>
-                        <a href="#">
-                            <em><img src="${path}/resources/img/logo.png" alt="KH CINEMA"></em>
-                        </a>    
-                    </h1>
-                    <nav id="mNav">
-                        <h2 class="ir_so">KH CINEMA 전체메뉴</h2>
-                        <a href="#" class="ham"><span></span></a>
-                    </nav>
-                    <nav class="nav">
-                        <ul class="clearfix">
-                            <li><a href="#">영화</a></li>
-                            <li><a href="#">영화관</a></li>
-                            <li><a href="#">특별관</a></li>
-                            <li><a href="#">이벤트</a></li>
-                            <li><a href="#">로그인</a></li>
-                        </ul>
-                    </nav>    
-                </div>
-            </div>
-        </div>
+        <%@ include file="./module/navigation.jsp" %>
     </header>
-    <!-- //header -->
-    
     
     <section id="banner">
         <div class="banner_menu">
@@ -527,10 +501,78 @@
                 </div>
             </div>
         </div>
-    </section>  
-    <!-- //movie -->
+    </section>
+	 <!-- //movie -->
     
-	 <!-- 자바스크립트 라이브러리 -->
+    
+    <section id="event">
+        <div class="container">
+            <div class="row">
+                <div class="event">
+                    <h2><em>새로운 이벤트</em></h2>
+                    <div class="event_left">
+                        <div class="event_slider">
+                            <img src="${path}/resources/img/event01.jpg" alt="A good movie 시사회">
+                        </div>
+                        <figure class="event_box1">
+                            <img src="${path}/resources/img/event02.jpg" alt="안심 영화관 만들기">
+                        </figure>
+                        <figure class="event_box2">
+                            <img src="${path}/resources/img/event03.jpg" alt="군 장병 온라인 할인 오픈">
+                        </figure>
+                    </div>
+                    <figure class="event_right">
+                        <img src="${path}/resources/img/event04.jpg" alt="사표 대신 영화표">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //event -->
+    
+     <footer id="footer">
+        <div id="footer_sns">
+            <div class="container">
+                <div class="footer_sns">
+                    <ul>
+                        <li class="icon s1"><a href="#"><span class="ir_pm">트위터</span></a></li>
+                        <li class="icon s2"><a href="#"><span class="ir_pm">페이스북</span></a></li>
+                        <li class="icon s3"><a href="#"><span class="ir_pm">인스타그램</span></a></li>
+                        <li class="icon s4"><a href="#"><span class="ir_pm">구글 플레이</span></a></li>
+                        <li class="icon s5"><a href="#"><span class="ir_pm">아이폰 앱스토어</span></a></li>
+                    </ul>    
+                    <div class="tel">
+                        <a href="#">ARS <em>1544-9970</em></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer_infor">
+            <div class="container">
+                <div class="row">
+                    <div class="footer_infor">
+                        <h2><img src="${path}/resources/img/logo_footer.png" alt="megabox"></h2>
+                        <ul>
+                            <li><a href="#">회사소개</a></li>
+                            <li><a href="#">채용정보</a></li>
+                            <li><a href="#">제휴/광고/부대사업 문의</a></li>
+                            <li><a href="#">이용약관</a></li>
+                            <li><a href="#">개인정보처리방침</a></li>
+                            <li><a href="#">고객센터</a></li>
+                            <li><a href="#">윤리경영</a></li>
+                        </ul>
+                        <address>
+                            <p>서울특별시 강남구 테헤란로 14길 6 남도빌딩 2F, 3F, 4F, 5F, 6F<br><span class="bar2">4조</span> 유병욱, 형소리, 문혜은, 강훈<br><span class="bar2">프로젝트명</span> 영화 예매 프로젝트</p>
+                            <p>Copyright 2022 by KH CINEMA Inc. All right reserved</p>
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+
+	<!-- 자바스크립트 라이브러리 -->
     <script src="${path}/resources/js/modernizr-custom.js"></script>
     <script src="${path}/resources/js/ie-checker.js"></script>
     <script src="${path}/resources/js/swiper.min.js"></script>

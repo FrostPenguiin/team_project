@@ -6,8 +6,6 @@
 		<setting name="jdbcTypeForNull" value="NULL"/>
 	</settings>
 	<typeAliases>
-		<!-- 
-		<typeAlias type="주소입력" alias="locsDto"/>
-		 -->
+		<typeAlias type="com.myhome.web.screen.model.ScreenDTO" alias="screenDto"/>
 	</typeAliases>
 </configuration>
