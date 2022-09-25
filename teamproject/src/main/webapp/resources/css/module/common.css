@@ -1,0 +1,114 @@
+.blind {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: -999em;
+  line-height: 0
+}
+
+/* named upload */
+.filebox .upload-name {
+  display: inline-block;
+  height: 30px;
+  padding: 0 15px;
+  border: 1px solid #d4d4d4;
+  background-color: #fff;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: normal;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none
+}
+
+.filebox.pop .upload-name {
+  height: 24px
+}
+
+.filebox.pop label {
+  height: 26px;
+  font-size: 13px;
+  line-height: 24px
+}
+
+/* layout */
+.layout-content {
+  width: 1500px;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Skip Navigation */
+#u_skip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  width: 100%
+}
+
+#u_skip a {
+  display: block;
+  position: absolute;
+  top: -50px;
+  left: 0;
+  z-index: 200;
+  width: 100%;
+  padding: 10px 0 13px;
+  background: #475c9b;
+  color: #fff;
+  text-align: center;
+  text-decoration: none
+}
+
+#u_skip a:active,
+#u_skip a:focus {
+  top: 0;
+  text-decoration: none
+}
+
+#u_skip a {
+  -moz-transition: all .3s;
+  -webkit-transition: all .3s;
+  transition: all .3s
+}
+
+/* clear */
+.clearfix {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+/* ir */
+.age-ico {
+  display: inline-block;
+  overflow: hidden;
+  background: url(../img/ico.png) no-repeat;
+  vertical-align: middle;
+  text-indent: -9999em;
+  width: 20px;
+  height: 20px;
+}
+
+/* table */
+table {
+  padding: 0;
+  border: 0;
+  border-spacing: 0px;
+  border-collapse: collapse;
+  /* table-layout: fixed; */
+}
+
+th,
+td {
+  padding: 0;
+}
+
+.on {
+  display: block !important;
+}
