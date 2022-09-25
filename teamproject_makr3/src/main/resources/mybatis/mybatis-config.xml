@@ -6,17 +6,7 @@
 		<setting name="jdbcTypeForNull" value="NULL"/>
 	</settings>
 	<typeAliases>
-		<typeAlias type="com.myhome.web.dept.model.DeptDTO" alias="deptDto"/>
-		<typeAlias type="com.myhome.web.emp.model.EmpDTO" alias="empDto"/>
-		<typeAlias type="com.myhome.web.login.model.PermDTO" alias="permDto"/>
-		<typeAlias type="com.myhome.web.board.model.BoardDTO" alias="boardDto"/>
-		<typeAlias type="com.myhome.web.board.model.BoardStatisDTO" alias="boardStatisDto"/>
-		<typeAlias type="com.myhome.web.comment.model.CommentDTO" alias="commentDto"/>
-		<typeAlias type="com.myhome.web.upload.model.FileUploadDTO" alias="fileUploadDto"/>
-		<!-- 
-		<typeAlias type="locs.model.LocsDTO" alias="locsDto"/>
-		<typeAlias type="emps.model.EmpDetailDTO" alias="empDetailDto"/>
-		<typeAlias type="job.model.JobDTO" alias="jobDto"/>
-		 -->
+		<typeAlias type="lv1.lv2.lv3.model.MovieDTO" alias="movieDto"/>
+		<typeAlias type="lv1.lv2.lv3.model.NmovieDTO" alias="nmovieDto"/>
 	</typeAliases>
 </configuration>

@@ -58,78 +58,29 @@
 						<colgroup>
 							<col class="news">
 						</colgroup>
-						<ul class="content">
-							<li class="movielist">
-								<div class="moviesrc">
-									<a class="movieinfo" href="./movieinfo">
-								<img class="moviesrc" src="${path }/resources/img/run.jpg">
-									</a>
-								</div>
-								<div class="name"><a class="movieinfo" href="./movieinfo">영화</a></div>
-								<div class="opendate">예정일</div>
-							</li>
-							<li class="movielist">
-								<div class="moviesrc">
-									<a class="movieinfo" href="./movieinfo">
-								<img class="moviesrc" src="${path }/resources/img/run.jpg">
-									</a>
-								</div>
-								<div class="name"><a class="movieinfo" href="./movieinfo">영화</a></div>
-								<div class="opendate">예정일</div>
-							</li>
-							<li class="movielist">
-								<div class="moviesrc">
-									<a class="movieinfo" href="./movieinfo">
-								<img class="moviesrc" src="${path }/resources/img/run.jpg">
-									</a>
-								</div>
-								<div class="name"><a class="movieinfo" href="./movieinfo">영화</a></div>
-								<div class="opendate">예정일</div>
-							</li>
-							<li class="movielist">
-								<div class="moviesrc">
-									<a class="movieinfo" href="./movieinfo">
-								<img class="moviesrc" src="${path }/resources/img/run.jpg">
-									</a>
-								</div>
-								<div class="name"><a class="movieinfo" href="./movieinfo">영화</a></div>
-								<div class="opendate">예정일</div>
-							</li>
-							<li class="movielist">
-								<div class="moviesrc">
-									<a class="movieinfo" href="./movieinfo">
-								<img class="moviesrc" src="${path }/resources/img/run.jpg">
-									</a>
-								</div>
-								<div class="name"><a class="movieinfo" href="./movieinfo">영화</a></div>
-								<div class="opendate">예정일</div>
-							</li>
-							<li class="movielist">
-								<div class="moviesrc">
-									<a class="movieinfo" href="./movieinfo">
-								<img class="moviesrc" src="${path }/resources/img/run.jpg">
-									</a>
-								</div>
-								<div class="name"><a class="movieinfo" href="./movieinfo">영화</a></div>
-								<div class="opendate">예정일</div>
-							</li>
-						</ul>
+						<tbody>
+							<c:if test="${not empty datas}">
+						<c:url var="movieInfoUrl" value="/movie/intendedMovieInfo" />
+							<c:forEach items="${datas}" var="movie">
+						<div class="content">
+							<div class="movielist">
+								<span class="moviesrc">
+									<img style="cursor: pointer"; onclick="location.href = '${movieInfoUrl}?id=${movie.nmv_num }'" class="moviesrc" src="${path }/resources/img/${movie.nmv_poster}">
+								</span>
+								<span class="name info"><a class="intededMovieInfo"style="cursor: pointer"; onclick="location.href = '${movieInfoUrl}?id=${movie.nmv_num }'">${movie.nmv_title }</a></span>
+							</div>
+						</div>
+							</c:forEach>
+						</c:if>
+						</tbody>
 					</table>
 			    </div>
-			    <div class="paginate">
-				    <a href="" class="first">처음 페이지</a>
-				    <a href="" class="prev">이전 페이지</a>
-				    <span>
-				        <c:forEach var="i" begin="1" end="5" step="1">
-				            <c:choose>
-				                <c:when test="${i eq param.pageNo}"><a href="javascript:goPage(${i})" class="choice">${i}</a></c:when>
-				                <c:otherwise><a href="javascript:goPage(${i})">${i}</a></c:otherwise>
-				            </c:choose>
-				        </c:forEach>
-				    </span>
-				    <a href="" class="next">다음 페이지</a>
-				    <a href="" class="last">마지막 페이지</a>
-				</div>
+			   <nav>
+					<c:url value="/movie" var="movieUrl" />
+					<jsp:include page="./paging.jsp">
+					<jsp:param value="${moviedUrl}" name="url" />
+					</jsp:include>
+				</nav>
 		    </section>
     </article> 
 

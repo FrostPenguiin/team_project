@@ -65,8 +65,7 @@ a:active {
 
 .content{
 	list-style:none;
-	padding : 20px 300px 20px 0px;
-	margin : 0;
+	margin : 20px 300px 20px 0px;
 	font-size: 100%;
 	display: block;
 }

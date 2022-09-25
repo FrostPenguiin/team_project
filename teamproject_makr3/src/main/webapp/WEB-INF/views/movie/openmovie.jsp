@@ -53,119 +53,39 @@
 				</ul>
 			</section>
 			<section class="list-center">
-				<div class="list">	
+				<div class="list">
 					<table>
 						<colgroup>
 							<col class="news">
 						</colgroup>
 						<tbody>
+						<c:if test="${not empty datas}">
+						<c:url var="movieInfoUrl" value="/movie/movieinfo" />
+							<c:forEach items="${datas}" var="movie">
 							<tr>
 								<td>
 									<div class="content">
 										<span class="moviesrc">
-											<a class="movieinfo" href="./movieinfo">
-												<img class="moviesrc" src="${path }/resources/img/run.jpg">
-											</a>
+												<img style="cursor: pointer"; onclick="location.href = '${movieInfoUrl}?id=${movie.mv_num }'" class="moviesrc" src="${path }/resources/img/${movie.mv_poster}">
 										</span>
-										<span class="name info"><a class="movieinfo" href="./movieinfo">영화</a></span>
-										<span class="point info">5.0</span>
-										<span class="palytime info">132분</span>
+										<span class="name info"><a class="movieinfo"style="cursor: pointer"; onclick="location.href = '${movieInfoUrl}?id=${movie.mv_num }'">${movie.mv_title }</a></span>
+										<span class="point info">${movie.mv_point }점</span>
+										<span class="palytime info">${movie.mv_playtime }분</span>
 										<span><a class="reservation" href="./home.jsp">예매</a></span> 
 									</div>
 								</td>
 							</tr>
-							<tr>
-								<td>
-									<div class="content">
-										<span class="moviesrc">
-											<a class="movieinfo" href="./movieinfo">
-												<img class="moviesrc" src="${path }/resources/img/run.jpg">
-											</a>
-										</span>
-										<span class="name info"><a class="movieinfo" href="./movieinfo">영화</a></span>
-										<span class="point info">5.0</span>
-										<span class="palytime info">132분</span>
-										<span><a class="reservation" href="./home.jsp">예매</a></span> 
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="content">
-										<span class="moviesrc">
-											<a class="movieinfo" href="./movieinfo">
-												<img class="moviesrc" src="${path }/resources/img/run.jpg">
-											</a>
-										</span>
-										<span class="name info"><a class="movieinfo" href="./movieinfo">영화</a></span>
-										<span class="point info">5.0</span>
-										<span class="palytime info">132분</span>
-										<span><a class="reservation" href="./home.jsp">예매</a></span> 
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="content">
-										<span class="moviesrc">
-											<a class="movieinfo" href="./movieinfo">
-												<img class="moviesrc" src="${path }/resources/img/run.jpg">
-											</a>
-										</span>
-										<span class="name info"><a class="movieinfo" href="./movieinfo">영화</a></span>
-										<span class="point info">5.0</span>
-										<span class="palytime info">132분</span>
-										<span><a class="reservation" href="./home.jsp">예매</a></span> 
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="content">
-										<span class="moviesrc">
-											<a class="movieinfo" href="./movieinfo">
-												<img class="moviesrc" src="${path }/resources/img/run.jpg">
-											</a>
-										</span>
-										<span class="name info"><a class="movieinfo" href="./movieinfo">영화</a></span>
-										<span class="point info">5.0</span>
-										<span class="palytime info">132분</span>
-										<span><a class="reservation" href="./home.jsp">예매</a></span> 
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="content">
-										<span class="moviesrc">
-											<a class="movieinfo" href="./movieinfo">
-												<img class="moviesrc" src="${path }/resources/img/run.jpg">
-											</a>
-										</span>
-										<span class="name info"><a class="movieinfo" href="./movieinfo">영화</a></span>
-										<span class="point info">5.0</span>
-										<span class="palytime info">132분</span>
-										<span><a class="reservation" href="./home.jsp">예매</a></span> 
-									</div>
-								</td>
-							</tr>
+							</c:forEach>
+						</c:if>
 						</tbody>
 					</table>
 			    </div>
-			    <div class="paginate">
-				    <a href="" class="first">처음 페이지</a>
-				    <a href="" class="prev">이전 페이지</a>
-				    <span>
-				        <c:forEach var="i" begin="1" end="5" step="1">
-				            <c:choose>
-				                <c:when test="${i eq param.pageNo}"><a href="javascript:goPage(${i})" class="choice">${i}</a></c:when>
-				                <c:otherwise><a href="javascript:goPage(${i})">${i}</a></c:otherwise>
-				            </c:choose>
-				        </c:forEach>
-				    </span>
-				    <a href="" class="next">다음 페이지</a>
-				    <a href="" class="last">마지막 페이지</a>
-				</div>
+				<nav>
+					<c:url value="/movie" var="movieUrl" />
+					<jsp:include page="./paging.jsp">
+					<jsp:param value="${moviedUrl}" name="url" />
+					</jsp:include>
+				</nav>
 		    </section>
     </article> 
 

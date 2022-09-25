@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="nmovieMapper">
+	<resultMap type="nmovieDto" id="nmovieMap">
+		<constructor>
+			<idArg column="NMV_NUM" javaType="_int" />
+		</constructor>
+		<id column="NMV_NUM" property="nmv_num" />
+		<result column="NMV_TITLE" property="nmv_title"/>
+		<result column="NMV_OPENDATE" property="nmv_openDate"/>
+		<result column="NMV_DIRECTOR" property="nmv_director"/>
+		<result column="NMV_ACTOR" property="nmv_actor"/>
+		<result column="NMV_GENRE" property="nmv_genre"/>
+		<result column="MV_STORY" property="nmv_story"/>
+		<result column="NMV_INTIME" property="nmv_intime"/>
+		<result column="NMV_POSTER" property="nmv_poster"/>
+	</resultMap>
+	<select id="selectAll" resultMap="nmovieMap">
+		SELECT NMV_NUM, NMV_TITLE
+			 , NMV_OPENDATE
+			 , NMV_DIRECTOR
+			 , NMV_ACTOR
+			 , NMV_GENRE
+			 , NMV_STORY
+			 , NMV_INTIME
+			 , NMV_POSTER
+		  FROM N_MOVIE
+	</select>
+	<select id="selectMovie" resultMap="nmovieMap">
+		SELECT NMV_NUM, NMV_TITLE
+			 , NMV_OPENDATE
+			 , NMV_DIRECTOR
+			 , NMV_ACTOR
+			 , NMV_GENRE
+			 , NMV_STORY
+			 , NMV_INTIME
+			 , NMV_POSTER
+		  FROM N_MOVIE
+		 WHERE NMV_NUM = #{nmv_num}
+	</select>
+	<insert id="insertMovieAutoSeq" parameterType="nmovieDto" useGeneratedKeys="true"
+		keyProperty="nmv_num" keyColumn="NMV_NUM">
+		INSERT INTO N_MOVIE (NMV_NUM, NMV_TITLE, NMV_OPENDATE, NMV_DIRECTOR, NMV_ACTOR, NMV_GENRE, NMV_STORY, NMV_INTIME, NMV_POSTER)
+				   VALUES (SEQ_n_movie_nmv_num.NEXTVAL, #{nmv_title}, #{nmv_openDate}, #{nmv_director}, #{nmv_actor}, #{nmv_genre}, #{nmv_story}, #{nmv_intime}, #{nmv_poster})
+	</insert>
+	<insert id="insertMovie" parameterType="nmovieDto">
+		INSERT INTO N_MOVIE (NMV_NUM, NMV_TITLE, NMV_OPENDATE, NMV_DIRECTOR, NMV_ACTOR, NMV_GENRE, NMV_STORY, NMV_INTIME, NMV_POSTER)
+				   VALUES (#{nmv_num}, #{nmv_title}, #{nmv_openDate}, #{nmv_director}, #{nmv_actor}, #{nmv_genre}, #{nmv_story}, #{nmv_intime}, #{nmv_poster})
+	</insert>
+	<update id="updateMovie">
+		UPDATE N_MOVIE
+		   SET NMV_TITLE = #{nmv_title}
+		     , NMV_OPENDATE = #{nmv_openDate}
+		     , NMV_DIRECTOR = #{nmv_director}
+			 , NMV_ACTOR = #{nmv_actor}
+			 , NMV_GENRE = #{nmv_genre}
+			 , NMV_STORY = #{nmv_story}
+			 , NMV_INTIME = #{nmv_intime}
+			 , NMV_POSTER = #{nmv_poster}
+		 WHERE NMV_NUM = #{nmv_num}
+	</update>
+	<delete id="deleteMovie">
+		DELETE FROM N_MOVIE
+		 WHERE NMV_NUM = #{nmv_num}
+	</delete>
+	<select id="getTotalRows" resultType="_int" parameterType="String">
+		SELECT COUNT(*)
+		  FROM N_MOVIE
+		  <if test = "search != null">
+		  	WHERE NMV_TITLE LIKE '%' || #{search} || '%'
+		  </if>
+	</select>
+	<select id="selectPage" resultMap="nmovieMap" parameterType="String">
+		SELECT NMV_NUM
+			 , NMV_TITLE
+			 , NMV_OPENDATE
+			 , NMV_DIRECTOR
+			 , NMV_ACTOR
+			 , NMV_GENRE
+			 , NMV_STORY
+			 , NMV_INTIME
+			 , NMV_POSTER
+		  FROM N_MOVIE
+		<if test="search != null">
+			WHERE NMV_TITLE LIKE '%' || #{search} || '%'
+		</if>
+		 ORDER BY NMV_NUM DESC
+	</select>
+</mapper>

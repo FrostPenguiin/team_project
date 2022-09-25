@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="movieMapper">
+	<resultMap type="movieDto" id="movieMap">
+		<constructor>
+			<idArg column="MV_NUM" javaType="_int" />
+		</constructor>
+		<id column="MV_NUM" property="mv_num" />
+		<result column="MV_TITLE" property="mv_title"/>
+		<result column="MV_OPENDATE" property="mv_openDate"/>
+		<result column="MV_DIRECTOR" property="mv_director"/>
+		<result column="MV_ACTOR" property="mv_actor"/>
+		<result column="MV_GENRE" property="mv_genre"/>
+		<result column="MV_PLAYTIME" property="mv_playtime"/>
+		<result column="MV_STORY" property="mv_story"/>
+		<result column="MV_POINT" property="mv_point"/>
+		<result column="MV_INTIME" property="mv_intime"/>
+		<result column="MV_POSTER" property="mv_poster"/>
+	</resultMap>
+	<select id="selectAll" resultMap="movieMap">
+		SELECT MV_NUM, MV_TITLE
+			 , MV_OPENDATE
+			 , MV_DIRECTOR
+			 , MV_ACTOR
+			 , MV_GENRE
+			 , MV_PLAYTIME
+			 , MV_STORY
+			 , MV_POINT
+			 , MV_INTIME
+			 , MV_POSTER
+		  FROM MOVIE
+	</select>
+	<select id="selectMovie" resultMap="movieMap">
+		SELECT MV_NUM, MV_TITLE
+			 , MV_OPENDATE
+			 , MV_DIRECTOR
+			 , MV_ACTOR
+			 , MV_GENRE
+			 , MV_PLAYTIME
+			 , MV_STORY
+			 , MV_POINT
+			 , MV_INTIME
+			 , MV_POSTER
+		  FROM MOVIE
+		 WHERE MV_NUM = #{mv_num}
+	</select>
+	<insert id="insertMovieAutoSeq" parameterType="movieDto" useGeneratedKeys="true"
+		keyProperty="mv_num" keyColumn="MV_NUM">
+		INSERT INTO MOVIE (MV_NUM, MV_TITLE, MV_OPENDATE, MV_DIRECTOR, MV_ACTOR, MV_GENRE, MV_PLAYTIME, MV_STORY, MV_POINT, MV_INTIME, MV_POSTER)
+				   VALUES (SEQ_movie_mv_num.NEXTVAL, #{mv_title}, #{mv_openDate}, #{mv_director}, #{mv_actor}, #{mv_genre}, #{mv_playtime}, #{mv_story}, #{mv_point}, #{mv_intime}, #{mv_poster})
+	</insert>
+	<insert id="insertMovie" parameterType="movieDto">
+		INSERT INTO MOVIE (MV_NUM, MV_TITLE, MV_OPENDATE, MV_DIRECTOR, MV_ACTOR, MV_GENRE, MV_PLAYTIME, MV_STORY, MV_POINT, MV_INTIME, MV_POSTER)
+				   VALUES (#{mv_num}, #{mv_title}, #{mv_openDate}, #{mv_director}, #{mv_actor}, #{mv_genre}, #{mv_playtime}, #{mv_story}, #{mv_point}, #{mv_intime}, #{mv_poster})
+	</insert>
+	<update id="updateMovie">
+		UPDATE MOVIE
+		   SET MV_TITLE = #{mv_title}
+		     , MV_OPENDATE = #{mv_openDate}
+		     , MV_DIRECTOR = #{mv_director}
+			 , MV_ACTOR = #{mv_actor}
+			 , MV_GENRE = #{mv_genre}
+			 , MV_PLAYTIME = #{mv_playtime}
+			 , MV_STORY = #{mv_story}
+			 , MV_POINT = #{mv_point}
+			 , MV_INTIME = #{mv_intime}
+			 , MV_POSTER = #{mv_poster}
+		 WHERE MV_NUM = #{mv_num}
+	</update>
+	<delete id="deleteMovie">
+		DELETE FROM MOVIE
+		 WHERE MV_NUM = #{mv_num}
+	</delete>
+	<select id="getTotalRows" resultType="_int" parameterType="String">
+		SELECT COUNT(*)
+		  FROM MOVIE
+		  <if test = "search != null">
+		  	WHERE MV_TITLE LIKE '%' || #{search} || '%'
+		  </if>
+	</select>
+	<select id="selectPage" resultMap="movieMap" parameterType="String">
+		SELECT MV_NUM
+			 , MV_TITLE
+			 , MV_OPENDATE
+			 , MV_DIRECTOR
+			 , MV_ACTOR
+			 , MV_GENRE
+			 , MV_PLAYTIME
+			 , MV_STORY
+			 , MV_POINT
+			 , MV_INTIME
+			 , MV_POSTER
+		  FROM MOVIE
+		<if test="search != null">
+			WHERE MV_TITLE LIKE '%' || #{search} || '%'
+		</if>
+		 ORDER BY MV_NUM DESC
+	</select>
+</mapper>
