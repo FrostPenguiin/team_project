@@ -14,7 +14,7 @@ public class AdminUserUpdate implements Command {
 		List<Integer> reserveList = null;
 		int commentUpdateChk = 0;
 		int reserveUpdateChk = 0;
-		AdminUserDAO dao = (AdminUserDAO) Common.sqlSession.getMapper3(AdminUserDAO.class);
+		AdminUserDAO dao = (AdminUserDAO) (Common.sqlSession).getMapper3(AdminUserDAO.class);
 		AdminUserDTO dto2 = dao.memberRead(dto.getMem_uid());
 		int error = 0;
 		

@@ -9,7 +9,7 @@ public class AdminUserList implements Command {
 	
 	@Override
 	public void execute(Model model) {
-		AdminUserDAO dao = (AdminUserDAO) Common.sqlSession.getMapper(AdminUserDAO.class);
+		AdminUserDAO dao = (AdminUserDAO) Common.sqlSession.getMapper2(AdminUserDAO.class);
 		List<AdminUserDTO> list = null;
 		
 		list = dao.userList();
