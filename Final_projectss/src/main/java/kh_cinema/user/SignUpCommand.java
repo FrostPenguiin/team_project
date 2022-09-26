@@ -8,7 +8,7 @@ public class SignUpCommand implements Command {
 	@Override
 	public void execute(Model model) {
 		
-		UserVO dto= (UserVO)model.getAttribute("dto");
+		UserDTO dto= (UserDTO)model.getAttribute("dto");
 		String pwOk = (String)model.getAttribute("pwOk");
 		UserDAO dao = Common.sqlSession.getMapper(UserDAO.class);
 		int result = 0;

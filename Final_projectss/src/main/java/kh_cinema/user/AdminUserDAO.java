@@ -18,4 +18,5 @@ public interface AdminUserDAO {
 	
 	public List<Integer> commentList();
 	public List<Integer> reserveList();
+	public int userDelete(Integer mem_uid);
 }

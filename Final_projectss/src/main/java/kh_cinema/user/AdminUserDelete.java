@@ -20,7 +20,7 @@ public class AdminUserDelete implements Command {
 		AdminUserDAO dao = (AdminUserDAO) Common.sqlSession.getMapper2(AdminUserDAO.class);
 		
 
-//		reserveList = dao.reserveList();
+		reserveList = dao.reserveList();
 		if(reserveList.size()>0) {
 		for (Integer list : reserveList) {
 			if(list==mem_uid) {
