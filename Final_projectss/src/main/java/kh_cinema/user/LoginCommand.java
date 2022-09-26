@@ -18,7 +18,7 @@ public abstract class LoginCommand implements Command{
       String mem_id = (String)model.getAttribute("mem_id");
       String mem_pw = (String)model.getAttribute("mem_pw");
       UserVO loginDto = null;
-      UserDAO dao = Common.sqlSession.getMapper(UserDAO.class);
+      UserDAO dao = (UserDAO) Common.sqlSession.getMapper(UserDAO.class);
       int error = 0;
       
       

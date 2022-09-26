@@ -1,8 +1,10 @@
 package kh_cinema.user;
 
+import java.util.List;
+
 public class Model {
 
-	public void addAttribute(String string, int mem_uid) {
+	public void addAttribute(String string, Object adminUserDTO) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -17,4 +19,10 @@ public class Model {
 		return null;
 	}
 
+	public void addAttribute(String string, List<AdminUserDTO> list) {
+		// TODO Auto-generated method stub
+	
+	}		
 }
+
+
