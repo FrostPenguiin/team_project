@@ -6,6 +6,10 @@
 		<setting name="jdbcTypeForNull" value="NULL"/>
 	</settings>
 	<typeAliases>
-		<typeAlias type="com.myhome.web.screen.model.ScreenDTO" alias="screenDto"/>
+		<typeAlias type="lv1.lv2.lv3.screen.model.ScreenDTO" alias="screenDto"/>
+		<typeAlias type="lv1.lv2.lv3.movie.model.MovieDTO" alias="movieDto"/>
+		<typeAlias type="lv1.lv2.lv3.reserve.model.ReserveDTO" alias="reserveDto"/>
+		<typeAlias type="lv1.lv2.lv3.reserve.model.ScheduleDTO" alias="scheduleDto"/>
+		<typeAlias type="lv1.lv2.lv3.reserve.vo.ScheduleVO" alias="scheduleVo"/>
 	</typeAliases>
 </configuration>

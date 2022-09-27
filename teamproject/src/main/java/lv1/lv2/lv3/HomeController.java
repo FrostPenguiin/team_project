@@ -1,4 +1,4 @@
-package com.myhome.web;
+package lv1.lv2.lv3;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -27,7 +27,7 @@ public class HomeController {
 	      
 	      model.addAttribute("serverTime", formattedDate );
 	      
-	      return "index";
+	      return "main";
 	   }
 
 }

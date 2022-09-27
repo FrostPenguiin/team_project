@@ -16,7 +16,7 @@
 						<c:url var="mainUrl" value="." />
 							<li><a href="#">상영작</a></li>
 							<li><a href="#">상영예정작</a></li>
-							<li><a href="${mainUrl}/screen">영화관</a></li>
+							<li><a href="${mainUrl}/screen">영화관</a></li> <%-- 확인용임 유저용 상영관 페이지는 x 관리만 --%>
 							<li><a href="${mainUrl}/reserve">예매</a></li>
 					</ul>
 				</div>

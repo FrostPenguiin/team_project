@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="screenMapper">
+	<resultMap type="screenDto" id="screenMap">
+		<result property="scrNum" column="SCR_NUM" />
+		<result property="scrName" column="SCR_NAME" />
+		<result property="scrLoc" column="SCR_LOC" />
+		<result property="scrAddress" column="SCR_ADDRESS" />
+		<result property="scrTel" column="SCR_TEL" />
+	</resultMap>
+	
+	<select id="selectScreen" resultMap="screenMap">
+		SELECT * FROM SCREEN
+	</select>
+	
+	<select id="selectScrinfo" resultType="screenDto">
+		SELECT * 
+		  FROM SCREEN
+		 WHERE SCR_NUM = #{scrNum}
+	</select>
+	<!--
+	<select id="selectScrList" resultMap="screenMap">
+		SELECT S.SCR_NUM
+			 , S.SCR_NAME
+		  FROM SCREEN S
+		  JOIN SCHEDULES D
+		    ON S.SCR_NUM = D.SCHE_SCRNUM
+		 GROUP BY S.SCR_NUM, S.SCR_NAME
+		 ORDER BY S.SCR_NUM
+    </select>
+	 -->
+	<select id="selectScrList" resultMap="screenMap" parameterType="int">
+		SELECT S.SCR_NUM
+			 , S.SCR_NAME
+		  FROM SCREEN S
+		  JOIN SCHEDULES D
+		    ON S.SCR_NUM = D.SCHE_SCRNUM
+		 WHERE D.SCHE_MVNUM = #{mvNum}
+		 GROUP BY S.SCR_NUM, S.SCR_NAME
+		 ORDER BY S.SCR_NUM
+    </select>
+     
+</mapper>
