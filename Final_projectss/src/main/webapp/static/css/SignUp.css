@@ -1,0 +1,195 @@
+@charset "UTF-8";
+
+
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+#formDiv{
+	
+	margin-left: 30px;
+	
+	
+}
+
+#idOkbtn , #emailChk , #emailNumChk{
+	
+	margin-left: 20%;
+	margin-bottom: 10px;
+	
+}
+
+
+
+#title{
+	
+	text-align: center;
+  
+}
+
+
+#formTable{
+	
+	margin-bottom: 20px;
+	
+}
+
+
+#idtext{
+		float: left;
+	
+}
+
+.form-group input{
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	
+}
+
+#idmodal{
+	float: right;
+	
+}
+
+
+.table {
+	position: relative;
+	bottom: 50%;
+
+}
+
+.signUpBtn{
+	
+	width: 100px;
+	
+	
+}
+
+#socialbtn{
+
+	text-align: center;
+	margin-left: 2%;
+	
+}
+
+.card0 {
+    box-shadow: 0px 0px 5px 0px #757575;
+    border-radius: 20px
+}
+
+
+
+.logo {
+    margin-top: 30px;
+    margin-left: 15px;
+    cursor: pointer
+    
+}
+
+.card2 {
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 100px
+}
+
+
+
+
+
+.line {
+    height: 1px;
+    width: 45%;
+    background-color: #E0E0E0;
+    margin-top: 10px
+}
+
+.or {
+    width: 10%
+}
+
+.text-sm {
+    font-size: 14px !important
+}
+
+.form-control{
+    padding: 10px 12px 10px 12px;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    margin-top: 2px;
+    width: 50%;
+    height : 45px;
+    box-sizing: border-box;
+    color: #2C3E50;
+    font-size: 14px;
+    letter-spacing: 1px;
+
+}
+
+.form-control:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #512DA8;
+    outline-width: 0;
+}
+
+::placeholder {
+    color: #EEEEEE;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: #EEEEEE;
+}
+
+::-ms-input-placeholder {
+    color: #EEEEEE;
+}
+
+button:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0;
+}
+
+.btn-blue {
+    background-color: #4287f5;
+    width: 100%;
+    color: #fff;
+    border-radius: 6px;
+}
+
+.btn-blue:hover {
+    background-color: #73bdfa;
+    color: #fff;
+    cursor: pointer;
+}
+
+.card-0 {
+    color: #311B92;
+    background-color: #fff;
+    border-radius: 20px;
+    min-height: 352px;
+    margin-top: 80px;
+    padding: 30px;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: -100px;
+    display: -webkit-box !important;
+}
+
+.carousel-indicators li {
+    cursor: pointer;
+    border-radius: 50% !important;
+    width: 40px !important;
+    height: 40px !important;
+    opacity: 0.5;
+    margin: 5px !important;
+}
