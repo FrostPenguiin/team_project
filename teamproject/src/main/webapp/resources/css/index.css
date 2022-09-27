@@ -1,0 +1,221 @@
+/* 슬릭 슬라이드 */
+.slick-items, .visual{
+    position: relative;
+    height: 650px;
+}
+.img-wrap {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+/* 슬라이드 텍스트 */
+.visual-text{
+    position: relative;
+    display: block;
+    width: 970px;
+    margin: 0 auto;
+    margin-top: 230px;
+    color:#fff;
+    text-shadow: 1px 1px 1px #000000;
+    font-family: '나눔고딕','NanumGothic','맑은 고딕','Malgun Gothic','돋움',dotum,'Apple SD Gothic Neo',sans-serif;
+}
+.visual-text::after{
+    position: absolute;
+    top:100px;
+    left: 0;
+    content: "";
+    display: block;
+    width: 50%;
+    height: 1px;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+.visual-text-title{
+    display: block;
+    padding-top: 2px;
+    padding-bottom: 19px;
+    font-size: 36px;
+    font-weight: 400;
+}
+.visual-text-title em{
+    display: block;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    padding: 8px 0;
+}
+.visual-text-sub{
+    display: inline-block;
+    font-size: 24px;
+    line-height: 29px;
+}
+/* 영화 탭메뉴 */
+.movie-wrap{
+    background: #eeebe9
+}
+.movie-box{
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+}
+.movie-tabmenu {
+    height:650px;
+    text-align: center;
+}
+.movie-tabmenu li{
+    display: inline-block;
+    margin:-1px;
+}
+.movie-tabmenu li::after{
+    display: block;
+    content: "";
+    clear: both;
+}
+.movie-tabmenu>li>a{
+    display: inline-block;
+    padding: 13px 47px;
+    margin-right: -2px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    font-weight: 600;
+}
+.movie-tabmenu>li>a.active{
+    color:#fff;
+    background: #666;
+    border: 1px solid #666;
+}
+.tab-content-wrap{
+    display: none;
+    position: absolute;
+    top:200px;
+    left:44px;
+    overflow: hidden;
+}
+.tab-content{
+    float: left;
+    margin-left: 35px;
+}
+.tab-content:first-child{
+    margin-left:0;
+}
+.movie-content{
+    position: relative;
+    background: #fff;
+    border: 1px solid #d9d9d9;
+}
+.movie_img{
+    width: 250px;
+    height: 336px;
+}
+.movie_img img{
+    width: 100%;
+    height: 336px;
+}
+.movie-info{
+    text-align: left;
+}
+.info-text-area{
+    padding: 10px 15px;
+    font-size: 13px;
+    border-top: 1px solid #ccc;
+}
+.info-text::after{
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    margin: 0 10px;
+    background: #ccc;
+}
+.info-text:last-child::after{
+    width: 0;
+}
+.movie-title{
+    display: inline-block;
+    overflow: hidden;
+    padding: 10px;
+    max-width: 210px;
+    font-size: 18px;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.movie-btn-area{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 91px;
+    padding-top:100px;
+    background: rgba(0, 0, 0, 0.5);
+}
+.movie-btn{
+    display: block;
+    width: 180px;
+    padding: 15px 0;
+    margin:0 35px;
+    color: #fff;
+    border: 1px solid #fff;
+    font-size: 16px;
+    font-weight: 500;
+    background: transparent;
+    text-align: center;
+}
+.movie-btn:hover, .movie-btn:focus{
+    background: #fff;
+    color: #666;
+}
+.movie-btn:first-child{
+    margin-bottom: 10px;
+}
+.movie_img a{
+    display: block;
+}
+.movie-btn-area.on{
+    display: block;
+}
+/* 영화 관람연령대 */
+.movie-title>a>span{
+    margin-top:-4px;
+    margin-right: 10px;
+}
+.age-19{
+    background-position: -90px 0;
+}
+.age-all{
+    background-position: 0 0;
+}
+.age-15{
+    background-position: -60px 0;
+}
+.age-12{
+    background-position: -30px 0;
+}
+/* 영화관이미지 */
+.kh-cinema{
+    position: relative;
+    height: 600px;
+    background: url("../img/seat.jpg")  no-repeat;
+    background-size: cover;
+    background-position:  50% 70%;
+    background-attachment: fixed;
+}
+.cinema-content{
+    position: absolute;
+    top: 280px;
+    left: 740px;
+    display: inline-block;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+}
+.cinema-text{
+    margin-top: 20px;
+}

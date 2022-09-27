@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="scheduleMapper">
+	<resultMap type="scheduleDto" id="scheduleMap">
+		<result property="sNum" column="SCHE_NUM" />
+		<result property="sScrNum" column="SCHE_SCRNUM" />
+		<result property="sMvNum" column="SCHE_MVNUM" />
+		<result property="sDay" column="SCHE_DAY" />
+		<result property="sTime" column="SCHE_TIME" />
+		<result property="sReservSeatNum" column="RESERVED_SEATNUM" />
+	</resultMap>
+	<select id="selectsDate" parameterType="scheduleVo" resultMap="scheduleMap">
+		SELECT SCHE_DAY, SCHE_MVNUM, SCHE_SCRNUM
+  		  FROM SCHEDULES
+  		 WHERE SCHE_MVNUM = #{mvNum} 
+  		   AND SCHE_SCRNUM = #{scrNum}
+  		 GROUP BY SCHE_DAY, SCHE_MVNUM, SCHE_SCRNUM
+  		 ORDER BY SCHE_DAY
+	</select>
+	<select id="selectsTime" parameterType="scheduleVo" resultMap="scheduleMap">
+		SELECT SCHE_TIME
+  		  FROM SCHEDULES
+  		 WHERE SCHE_MVNUM = #{mvNum} 
+  		   AND SCHE_SCRNUM = #{scrNum}
+  		   AND SCHE_DAY = #{sDay}
+  		 GROUP BY SCHE_TIME
+  		 ORDER BY SCHE_TIME
+	</select>
+</mapper>
