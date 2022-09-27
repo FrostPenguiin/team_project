@@ -46,10 +46,8 @@ public class PayService {
 			return payInfoVO;
 
 		} catch (RestClientException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (URISyntaxException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
@@ -59,8 +57,8 @@ public class PayService {
 	public String KakaoPayReady(String total_amount, String quantity) {
 
 		RestTemplate restTemplate = new RestTemplate();
-		partner_order_id = "1234";
-		partner_user_id = "CGV";
+		partner_order_id = "ADMIN";
+		partner_user_id = "KH";
 		
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Authorization", "KakaoAK 39deae28769eaf571671558a88666f8b");
@@ -90,7 +88,7 @@ public class PayService {
 		} catch (URISyntaxException e) {
 			e.printStackTrace();
 		}
-		return "/pay";
+		return "/pay/kakaoPay";
 	}
 
 }

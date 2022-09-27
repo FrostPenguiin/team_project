@@ -40,15 +40,23 @@ public class ReserveDAO {
 		return result;
 	}
 
+	// resCode 의 최대값 구하기
 	public String getMaxRecode() {
 		String result = session.selectOne("reserveMapper.getMaxRecode");
 		return result;
 	}
 
-	public int getInsertReserve(ReserveDTO dto) {
-		int result = session.insert("reserveMapper.getInsertReserve", dto);
-		System.out.println("dao : " + result);
-		return result;
+	// 예매정보 insert
+	public boolean getInsertReserve(ReserveDTO dto) {
+		int result = 0;
+		if(dto.getResCode() == null) {
+			result = session.insert("reserveMapper.getInsertReserve", dto);
+		} else {
+			result = session.insert("reserveMapper.InsertReserveAutoSeq", dto);
+		}
+    	// result 결과가 1이면 추가가 될것 이므로 true 반환, 1이 아니면 문제가 생긴것이므로 false 반환
+		System.out.println(result);
+		return result == 1 ? true : false;
 	}
 	
 }

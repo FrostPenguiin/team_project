@@ -2,6 +2,8 @@ package lv1.lv2.lv3.reserve.service;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
@@ -63,7 +65,8 @@ public class ReserveService {
 		return StimeList_json;
 	}
 
-	public ModelAndView getInsertReserv(ReserveDTO dto, RedirectAttributes ra) {
+	// 예매 하기
+	public ModelAndView getInsertReserv(HttpServletRequest request, ReserveDTO dto, RedirectAttributes ra) {
 		System.out.println("reService.getInsertReserv() 호출");
 		ModelAndView mav = new ModelAndView();
 		
@@ -93,16 +96,17 @@ public class ReserveService {
 		System.out.println("resCode : " + resCode);
 		
 		// 예매 정보 insert
-		int insertReserve = redao.getInsertReserve(dto);
-		System.out.println(insertReserve);
-		
-		if(insertReserve > 0) {
-			ra.addFlashAttribute("msg", "예매가 완료 되었습니다.");
+		boolean result = redao.getInsertReserve(dto);
+		String msg = "예매 실패";		
+		if(result) {
+			msg = "예매 성공";
+			ra.addFlashAttribute("price", request.getParameter("price"));
+			ra.addFlashAttribute("count", request.getParameter("count"));
 			mav.setViewName("redirect:/pay/kakaoPay");
-		} else {
-			ra.addFlashAttribute("msg", "예매 실패");
-			mav.setViewName("redirect:/");
 		}
+		mav.addObject("msg", msg);
+		mav.addObject("path", "../");
+		
 		return mav;
 	}
 	

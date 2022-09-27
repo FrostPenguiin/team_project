@@ -1,6 +1,8 @@
 package lv1.lv2.lv3.reserve.controller;
 
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -49,9 +51,10 @@ public class ReserveController {
 	}
 	
 	@RequestMapping(value="/movieReservation")
-	public ModelAndView movieReservation(ReserveDTO reservDto, RedirectAttributes ra) {
+	public ModelAndView movieReservation(HttpServletRequest request, ReserveDTO dto, RedirectAttributes ra) {
 		System.out.println("예매 입력기능");
-		ModelAndView mav = reService.getInsertReserv(reservDto, ra);
+		
+		ModelAndView mav = reService.getInsertReserv(request, dto, ra);
 		
 		return mav;
 	}

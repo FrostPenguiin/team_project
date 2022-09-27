@@ -18,6 +18,13 @@
 		SELECT MAX(RES_CODE)
 		  FROM RESERVATION
 	</select>
+	<!-- 밑의 insert 구문 2개에 컬럼(memId) 추가해야함. 일단 테스트용으로 뺀것임 -->
+	<insert id="InsertReserveAutoSeq" parameterType="reserveDto" useGeneratedKeys="true"
+		keyProperty="resCode" keyColumn="RES_CODE">
+		INSERT INTO RESERVATION(RES_CODE, MV_NUM, SCR_NUM, RES_SCHEDAY, 
+		                        RES_SCHETIME, RES_CNT, RES_PAY)
+		VALUES(RESERVATION_SEQ.NEXTVAL, #{mvNum}, #{scrNum}, #{resDate}, #{resTime}, #{resCnt}, #{pay})
+	</insert>
 	<insert  id="getInsertReserve" parameterType="reserveDto">
 		INSERT INTO RESERVATION(RES_CODE, MV_NUM, SCR_NUM, RES_SCHEDAY, 
 		                        RES_SCHETIME, RES_CNT, RES_PAY)

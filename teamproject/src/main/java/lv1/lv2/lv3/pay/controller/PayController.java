@@ -33,7 +33,7 @@ public class PayController {
 		return "redirect:" + pService.KakaoPayReady(total_amount, quantity);
 	}
 
-	@GetMapping("kakaoPaySuccess")
+	@GetMapping("/kakaoPaySuccess")
 	public ModelAndView kakaoPaySuccess(HttpServletRequest request, HttpSession session) throws Exception {
 		String resCode = (String) session.getAttribute("resCode");
 		String pg_token = request.getParameter("pg_token");
